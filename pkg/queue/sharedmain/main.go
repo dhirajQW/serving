@@ -87,7 +87,9 @@ type config struct {
 	ServingReadinessProbe               string `split_words:"true"` // optional
 	EnableProfiling                     bool   `split_words:"true"` // optional
 	EnableHTTP2AutoDetection            bool   `split_words:"true"` // optional
-
+	// See https://github.com/knative/serving/issues/12387
+	EnableHTTPFullDuplex bool `split_words:"true"` // optional
+	
 	// Logging configuration
 	ServingLoggingConfig         string `split_words:"true" required:"true"`
 	ServingLoggingLevel          string `split_words:"true" required:"true"`
